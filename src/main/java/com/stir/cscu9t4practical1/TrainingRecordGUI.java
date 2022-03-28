@@ -1,11 +1,10 @@
 // GUI and main program for the Training Record
 package com.stir.cscu9t4practical1;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
-import java.lang.Number;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TrainingRecordGUI extends JFrame implements ActionListener {
 
@@ -157,22 +156,22 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         }
 
         //Sprint button
-        if (event.getSource() == sprint){
+        if (event.getSource() == sprint) {
             message = SprintEn("sprint");
         }
 
         //Cycle button
-        if (event.getSource() == cycle){
+        if (event.getSource() == cycle) {
             message = CycleEn("cycle");
         }
 
         //Swim button
-        if (event.getSource() == swim){
+        if (event.getSource() == swim) {
             message = SwimEn("swim");
         }
 
         //Remove Button
-        if (event.getSource() == rem){
+        if (event.getSource() == rem) {
             RemoveEn();
         }
 
@@ -182,117 +181,164 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     } // actionPerformed
 
     public String addEntry(String what) {
-        String message ="";
-        String n = name.getText();
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        float km = java.lang.Float.parseFloat(dist.getText());
-        int h = Integer.parseInt(hours.getText());
-        int mm = Integer.parseInt(mins.getText());
-        int s = Integer.parseInt(secs.getText());
+        String message = "";
 
-        Entry e = new Entry(n, d, m, y, h, mm, s, km);
-        boolean check = myAthletes.isUnique(n, d, m ,y);
-        if(check==true){
-            myAthletes.addEntry(e);
-            message = "Record added\n";
-            System.out.println("Adding "+what+" entry to the records");
+        //Empty inputs
+        if (!month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("") && !dist.getText().equals("")
+                && !hours.getText().equals("") && !mins.getText().equals("") && !secs.getText().equals("")) {
+
+            //The other inputs must be empty
+            if (reps.getText().equals("") && rec.getText().equals("") && ter.getText().equals("") && tem.getText().equals("") && wh.getText().equals("")) {
+
+                String n = name.getText();
+                int m = Integer.parseInt(month.getText());
+                int d = Integer.parseInt(day.getText());
+                int y = Integer.parseInt(year.getText());
+                float km = java.lang.Float.parseFloat(dist.getText());
+                int h = Integer.parseInt(hours.getText());
+                int mm = Integer.parseInt(mins.getText());
+                int s = Integer.parseInt(secs.getText());
+
+                Entry e = new Entry(n, d, m, y, h, mm, s, km);
+                boolean check = myAthletes.isUnique(n, d, m, y);
+                if (check == true) {
+                    myAthletes.addEntry(e);
+                    message = "Record added\n";
+                    System.out.println("Adding " + what + " entry to the records");
+                } else {
+                    message = "Already exists";
+                }
+
+            }
         }
-        else{
-            message = "Already exists";
-        }
-        //int num = myAthletes.getNumberOfEntries();
-        //System.out.println(num);
         return message;
     }
 
-    public void RemoveEn(){
-        String message ="Removing Athlete";
-        String n = name.getText();
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        myAthletes.removeAthlete(n, d, m, y);
+    public void RemoveEn() {
+        if (!name.getText().equals("") && !month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("")) {
+            String n = name.getText();
+            int m = Integer.parseInt(month.getText());
+            int d = Integer.parseInt(day.getText());
+            int y = Integer.parseInt(year.getText());
+            myAthletes.removeAthlete(n, d, m, y);
+        }
 
     }
 
     //Sprint entry
-    public String SprintEn(String what){
-        String message = "Record added\n";
-        System.out.println("Adding "+what+" entry to the records");
-        String n = name.getText();
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        float km = java.lang.Float.parseFloat(dist.getText());
-        int h = Integer.parseInt(hours.getText());
-        int mm = Integer.parseInt(mins.getText());
-        int s = Integer.parseInt(secs.getText());
-        int r = Integer.parseInt(reps.getText());
-        int recov = Integer.parseInt(rec.getText());
+    public String SprintEn(String what) {
+        String message = "";
 
-        Entry e = new SprintEntry(n, d, m, y, h, mm, s, km, r, recov);
+        //Empty inputs
+        if (!month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("") && !dist.getText().equals("")
+                && !hours.getText().equals("") && !mins.getText().equals("") && !secs.getText().equals("")
+                && !reps.getText().equals("") && !rec.getText().equals("")) {
 
-        myAthletes.addEntry(e);
+            //Other inputs must be empty
+            if (ter.getText().equals("") && tem.getText().equals("") && wh.getText().equals("")) {
+                message = "Record added\n";
+                System.out.println("Adding " + what + " entry to the records");
+                String n = name.getText();
+                int m = Integer.parseInt(month.getText());
+                int d = Integer.parseInt(day.getText());
+                int y = Integer.parseInt(year.getText());
+                float km = java.lang.Float.parseFloat(dist.getText());
+                int h = Integer.parseInt(hours.getText());
+                int mm = Integer.parseInt(mins.getText());
+                int s = Integer.parseInt(secs.getText());
+                int r = Integer.parseInt(reps.getText());
+                int recov = Integer.parseInt(rec.getText());
+
+                Entry e = new SprintEntry(n, d, m, y, h, mm, s, km, r, recov);
+
+                myAthletes.addEntry(e);
+            }
+        }
         return message;
     }
 
     //Cycle Entry
-    public String CycleEn(String what){
-        String message = "Record added\n";
-        System.out.println("Adding "+what+" entry to the records");
-        String n = name.getText();
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        float km = java.lang.Float.parseFloat(dist.getText());
-        int h = Integer.parseInt(hours.getText());
-        int mm = Integer.parseInt(mins.getText());
-        int s = Integer.parseInt(secs.getText());
-        String t = ter.getText();
-        String te = tem.getText();
-        Entry e = new CycleEntry(n, d, m, y, h, mm, s, km, t, te);
-        myAthletes.addEntry(e);
+    public String CycleEn(String what) {
+        String message = "";
+
+        //Empty inputs
+        if (!month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("") && !dist.getText().equals("")
+                && !hours.getText().equals("") && !mins.getText().equals("") && !secs.getText().equals("")
+                && !ter.getText().equals("") && !tem.getText().equals("")) {
+
+            //Other inputs must be empty
+            if (reps.getText().equals("") && rec.getText().equals("") && wh.getText().equals("")) {
+                message = "Record added\n";
+                System.out.println("Adding " + what + " entry to the records");
+                String n = name.getText();
+                int m = Integer.parseInt(month.getText());
+                int d = Integer.parseInt(day.getText());
+                int y = Integer.parseInt(year.getText());
+                float km = java.lang.Float.parseFloat(dist.getText());
+                int h = Integer.parseInt(hours.getText());
+                int mm = Integer.parseInt(mins.getText());
+                int s = Integer.parseInt(secs.getText());
+                String t = ter.getText();
+                String te = tem.getText();
+                Entry e = new CycleEntry(n, d, m, y, h, mm, s, km, t, te);
+                myAthletes.addEntry(e);
+            }
+        }
         return message;
     }
 
 
     //Swim Entry
-    //Cycle Entry
-    public String SwimEn(String what){
-        String message = "Record added\n";
-        System.out.println("Adding "+what+" entry to the records");
-        String n = name.getText();
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        float km = java.lang.Float.parseFloat(dist.getText());
-        int h = Integer.parseInt(hours.getText());
-        int mm = Integer.parseInt(mins.getText());
-        int s = Integer.parseInt(secs.getText());
-        String w = wh.getText();
-        Entry e = new SwimEntry(n, d, m, y, h, mm, s, km, w);
-        myAthletes.addEntry(e);
+    public String SwimEn(String what) {
+        String message = "";
+
+        //Empty inputs
+        if (!month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("") && !dist.getText().equals("")
+                && !hours.getText().equals("") && !mins.getText().equals("") && !secs.getText().equals("")
+                && !wh.getText().equals("")) {
+
+            //Other inputs must be empty
+            if (reps.getText().equals("") && rec.getText().equals("") && ter.getText().equals("") && tem.getText().equals("")) {
+                message = "Record added\n";
+                System.out.println("Adding " + what + " entry to the records");
+                String n = name.getText();
+                int m = Integer.parseInt(month.getText());
+                int d = Integer.parseInt(day.getText());
+                int y = Integer.parseInt(year.getText());
+                float km = java.lang.Float.parseFloat(dist.getText());
+                int h = Integer.parseInt(hours.getText());
+                int mm = Integer.parseInt(mins.getText());
+                int s = Integer.parseInt(secs.getText());
+                String w = wh.getText();
+                Entry e = new SwimEntry(n, d, m, y, h, mm, s, km, w);
+                myAthletes.addEntry(e);
+            }
+        }
         return message;
     }
 
     public String lookupEntry() {
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        outputArea.setText("looking up record ...");
-        String message = myAthletes.lookupEntry(d, m, y);
+        String message = "";
+        if (!month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("")) {
+            int m = Integer.parseInt(month.getText());
+            int d = Integer.parseInt(day.getText());
+            int y = Integer.parseInt(year.getText());
+            outputArea.setText("looking up record ...");
+            message = myAthletes.lookupEntry(d, m, y);
+        }
         return message;
     }
 
-    //Find all by date button
+    //Find all by date method
     public String findAllByDateEntry() {
-        int m = Integer.parseInt(month.getText());
-        int d = Integer.parseInt(day.getText());
-        int y = Integer.parseInt(year.getText());
-        outputArea.setText("looking up for records...");
-        String message = myAthletes.lookupallEntry(d, m, y);
+        String message = "";
+        if (!month.getText().equals("") && !day.getText().equals("") && !year.getText().equals("")) {
+            int m = Integer.parseInt(month.getText());
+            int d = Integer.parseInt(day.getText());
+            int y = Integer.parseInt(year.getText());
+            outputArea.setText("looking up for records...");
+            message = myAthletes.lookupallEntry(d, m, y);
+        }
         return message;
     }
 
@@ -313,6 +359,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         wh.setText("");
 
     }// blankDisplay
+
     // Fills the input fields on the display for testing purposes only
     public void fillDisplay(Entry ent) {
         name.setText(ent.getName());

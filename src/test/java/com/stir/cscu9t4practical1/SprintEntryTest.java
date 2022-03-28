@@ -5,33 +5,30 @@
  */
 package com.stir.cscu9t4practical1;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 /**
- *
  * @author saemundur
  */
 public class SprintEntryTest {
-    
+
     public SprintEntryTest() {
     }
-    
+
     @BeforeAll
     public static void setUpClass() {
     }
-    
+
     @AfterAll
     public static void tearDownClass() {
     }
-    
+
     @BeforeEach
     public void setUp() {
     }
-    
+
     @AfterEach
     public void tearDown() {
     }
@@ -131,7 +128,7 @@ public class SprintEntryTest {
         float result = instance.getDistance();
         assertEquals(expResult, result, 0.0);
     }
-    
+
     /**
      * Test of getRepetitions method of class SprintEntry
      */
@@ -149,7 +146,7 @@ public class SprintEntryTest {
         int result2 = (instance2).getRepetitions();
         assertEquals(expResults2, result2);
     }
-    
+
     /**
      * Test of getRecovery method of class SprintEntry
      */
@@ -179,5 +176,5 @@ public class SprintEntryTest {
         String result = instance.getEntry();
         assertEquals(expResult, result);
     }
-    
+
 }
