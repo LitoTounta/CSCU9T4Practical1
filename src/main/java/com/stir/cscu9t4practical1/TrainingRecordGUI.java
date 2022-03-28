@@ -27,6 +27,8 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
     private JLabel labdist = new JLabel(" Distance (km):");
     private JButton addR = new JButton("Add");
     private JButton lookUpByDate = new JButton("Look Up");
+    //find all by date button
+    private JButton findAllByDate = new JButton("Find All By Date");
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -68,6 +70,11 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         addR.addActionListener(this);
         add(lookUpByDate);
         lookUpByDate.addActionListener(this);
+
+        //find all by date button
+        add(findAllByDate);
+        findAllByDate.addActionListener(this);
+
         add(outputArea);
         outputArea.setEditable(false);
         setSize(720, 200);
@@ -87,6 +94,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         }
         if (event.getSource() == lookUpByDate) {
             message = lookupEntry();
+        }
+        //Find all by date button
+        if (event.getSource() == findAllByDate) {
+            message = findAllByDateEntry();
         }
         outputArea.setText(message);
         blankDisplay();
@@ -116,6 +127,18 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         String message = myAthletes.lookupEntry(d, m, y);
         return message;
     }
+
+    //Find all by date button
+    public String findAllByDateEntry() {
+        int m = Integer.parseInt(month.getText());
+        int d = Integer.parseInt(day.getText());
+        int y = Integer.parseInt(year.getText());
+        outputArea.setText("looking up for records...");
+        String message = myAthletes.lookupallEntry(d, m, y);
+        // String message = myAthletes.lookupEntry(d, m, y);
+        return message;
+    }
+
 
     public void blankDisplay() {
         name.setText("");

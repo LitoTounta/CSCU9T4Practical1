@@ -16,7 +16,8 @@ public class TrainingRecord {
     
     // add a record to the list
    public void addEntry(Entry e){
-       tr.add(e);    
+       tr.add(e);
+
    } // addClass
    
    // look up the entry of a given day and month
@@ -30,6 +31,25 @@ public class TrainingRecord {
             }
        return result;
    } // lookupEntry
+
+    //Task 2
+    public String lookupallEntry (int d, int m, int y){
+        String result = "";
+        ListIterator<Entry> iter = tr.listIterator();
+        while (iter.hasNext()){
+            Entry current = iter.next();
+            if (current.getDay()==d && current.getMonth()==m && current.getYear()==y);
+            result = result + current.getEntry();
+        }
+        return result;
+    }
+
+
+
+    //here is going to be the method for findAllByDateEntry
+    //public String findAllByDateEntry(...);
+    //I need to implement a method from task 2, and call this method 2 for my task 3 method
+
    
    // Count the number of entries
    public int getNumberOfEntries(){
