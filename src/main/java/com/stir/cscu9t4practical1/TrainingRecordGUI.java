@@ -9,6 +9,7 @@ import java.lang.Number;
 
 public class TrainingRecordGUI extends JFrame implements ActionListener {
 
+
     private JTextField name = new JTextField(20);
     private JTextField day = new JTextField(2);
     private JTextField month = new JTextField(2);
@@ -48,6 +49,9 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
     //Swim button
     private JButton swim = new JButton("Swim");
+
+    //Remove button;
+    private JButton rem = new JButton("Remove");
 
     private TrainingRecord myAthletes = new TrainingRecord();
 
@@ -123,6 +127,10 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         add(swim);
         swim.addActionListener(this);
 
+        //remove entry button
+        add(rem);
+        rem.addActionListener(this);
+
         add(outputArea);
         outputArea.setEditable(false);
         setSize(720, 250);
@@ -131,7 +139,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
 
         // To save typing in new entries while testing, uncomment
         // the following lines (or add your own test cases)
-        
+
     } // constructor
 
     // listen for and respond to GUI events 
@@ -153,7 +161,6 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             message = SprintEn("sprint");
         }
 
-
         //Cycle button
         if (event.getSource() == cycle){
             message = CycleEn("cycle");
@@ -164,14 +171,18 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
             message = SwimEn("swim");
         }
 
+        //Remove Button
+        if (event.getSource() == rem){
+            RemoveEn();
+        }
+
 
         outputArea.setText(message);
         blankDisplay();
     } // actionPerformed
 
     public String addEntry(String what) {
-        String message = "Record added\n";
-        System.out.println("Adding "+what+" entry to the records");
+        String message ="";
         String n = name.getText();
         int m = Integer.parseInt(month.getText());
         int d = Integer.parseInt(day.getText());
@@ -180,9 +191,30 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int h = Integer.parseInt(hours.getText());
         int mm = Integer.parseInt(mins.getText());
         int s = Integer.parseInt(secs.getText());
+
         Entry e = new Entry(n, d, m, y, h, mm, s, km);
-        myAthletes.addEntry(e);
+        boolean check = myAthletes.isUnique(n, d, m ,y);
+        if(check==true){
+            myAthletes.addEntry(e);
+            message = "Record added\n";
+            System.out.println("Adding "+what+" entry to the records");
+        }
+        else{
+            message = "Already exists";
+        }
+        //int num = myAthletes.getNumberOfEntries();
+        //System.out.println(num);
         return message;
+    }
+
+    public void RemoveEn(){
+        String message ="Removing Athlete";
+        String n = name.getText();
+        int m = Integer.parseInt(month.getText());
+        int d = Integer.parseInt(day.getText());
+        int y = Integer.parseInt(year.getText());
+        myAthletes.removeAthlete(n, d, m, y);
+
     }
 
     //Sprint entry
@@ -201,6 +233,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int recov = Integer.parseInt(rec.getText());
 
         Entry e = new SprintEntry(n, d, m, y, h, mm, s, km, r, recov);
+
         myAthletes.addEntry(e);
         return message;
     }
@@ -243,7 +276,7 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         myAthletes.addEntry(e);
         return message;
     }
-    
+
     public String lookupEntry() {
         int m = Integer.parseInt(month.getText());
         int d = Integer.parseInt(day.getText());
@@ -260,7 +293,6 @@ public class TrainingRecordGUI extends JFrame implements ActionListener {
         int y = Integer.parseInt(year.getText());
         outputArea.setText("looking up for records...");
         String message = myAthletes.lookupallEntry(d, m, y);
-        // String message = myAthletes.lookupEntry(d, m, y);
         return message;
     }
 

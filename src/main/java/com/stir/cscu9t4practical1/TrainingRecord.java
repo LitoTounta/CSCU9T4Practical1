@@ -16,6 +16,7 @@ public class TrainingRecord {
     
     // add a record to the list
    public void addEntry(Entry e){
+        //check if it is unique before adding
        tr.add(e);
 
    } // addClass
@@ -38,8 +39,9 @@ public class TrainingRecord {
         ListIterator<Entry> iter = tr.listIterator();
         while (iter.hasNext()){
             Entry current = iter.next();
-            if (current.getDay()==d && current.getMonth()==m && current.getYear()==y);
-            result = result + current.getEntry();
+            if (current.getDay()==d && current.getMonth()==m && current.getYear()==y) {
+                result = result + current.getEntry();
+            }
         }
         return result;
     }
@@ -59,5 +61,32 @@ public class TrainingRecord {
    public void clearAllEntries(){
        tr.clear();
    }
+
+   public boolean isUnique(String name, int d, int m , int y){
+        boolean bool = true;
+       ListIterator<Entry> iter = tr.listIterator();
+       while (iter.hasNext()) {
+           Entry current = iter.next();
+           if (current.getName().equals(name) && current.getDay()==d && current.getMonth()==m && current.getYear()==y){
+               bool = false;
+               break;
+            }
+       }
+       return bool;
+
+   }
+
+   public void removeAthlete(String name, int d, int m, int y){
+       ListIterator<Entry> iter = tr.listIterator();
+       while (iter.hasNext()){
+           Entry current = iter.next();
+            System.out.println(current.getName());
+            System.out.println(name);
+            if(current.getName().equals(name) && current.getDay()==d && current.getMonth()==m && current.getYear()==y){
+               iter.remove();
+           }
+       }
+   }
+
    
 } // TrainingRecord
