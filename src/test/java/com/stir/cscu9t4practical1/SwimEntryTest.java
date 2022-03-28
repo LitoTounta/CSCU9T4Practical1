@@ -38,7 +38,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getName method, of class SwimEntry.
-
+    */
     @Test
     public void testGetName() {
         System.out.println("getName");
@@ -50,7 +50,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getDay method, of class SwimEntry.
-
+     */
     @Test
     public void testGetDay() {
         System.out.println("getDay");
@@ -62,7 +62,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getMonth method, of class SwimEntry.
-
+     */
     @Test
     public void testGetMonth() {
         System.out.println("getMonth");
@@ -74,7 +74,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getYear method, of class SwimEntry.
-
+     */
     @Test
     public void testGetYear() {
         System.out.println("getYear");
@@ -86,7 +86,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getHour method, of class SwimEntry.
-
+     */
     @Test
     public void testGetHour() {
         System.out.println("getHour");
@@ -98,7 +98,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getMin method, of class SwimEntry.
-
+     */
     @Test
     public void testGetMin() {
         System.out.println("getMin");
@@ -110,7 +110,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getSec method, of class SwimEntry.
-
+     */
     @Test
     public void testGetSec() {
         System.out.println("getSec");
@@ -122,7 +122,7 @@ public class SwimEntryTest {
 
     /**
      * Test of getDistance method, of class SwimEntry.
-
+     */
     @Test
     public void testGetDistance() {
         System.out.println("getDistance");
@@ -134,23 +134,29 @@ public class SwimEntryTest {
     
     /**
      * Test of getWhere method, of class SwimEntry
-
+     */
     @Test
     public void testGetWhere() {
         System.out.println("getWhere");
-        Entry instanceA = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"outdoors");
+        SwimEntry instanceA = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"outdoors");
         String expResultA = "outdoors";
         String result = instanceA.getWhere();
         assertEquals(expResultA, result);
         
-        Entry instanceB = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"pool");
-        String expResultB = "in a pool";
-        String result = instanceB.getWhere();
-        assertEquals(expResultB, result);
+        SwimEntry instanceB = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"pool");
+        String expResultB = "pool";
+        String result2 = instanceB.getWhere();
+        assertEquals(expResultB, result2);
+
+        //3rd test
+        SwimEntry instanceC = new SwimEntry("Alice", 1, 2, 2003, 0, 16, 7, 3,"pool");
+        String expResultC = "pool";
+        String result3 = instanceC.getWhere();
+        assertEquals(expResultC, result3);
     }
     /**
      * Test of getEntry method, of class SwimEntry.
-
+     */
     @Test
     public void testGetEntry() {
         System.out.println("getEntry");
@@ -158,6 +164,6 @@ public class SwimEntryTest {
         String expResult = "Alice swam 3.0 km outdoors in 0:16:7 on 1/2/2003\n";
         String result = instance.getEntry();
         assertEquals(expResult, result);
-    }*/
+    }
     
 }

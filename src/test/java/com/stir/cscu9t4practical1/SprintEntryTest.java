@@ -38,7 +38,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getName method, of class SprintEntry.
-
+     */
     @Test
     public void testGetName() {
         System.out.println("getName");
@@ -50,7 +50,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getDay method, of class SprintEntry.
-
+     */
     @Test
     public void testGetDay() {
         System.out.println("getDay");
@@ -62,7 +62,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getMonth method, of class SprintEntry.
-
+     */
     @Test
     public void testGetMonth() {
         System.out.println("getMonth");
@@ -74,7 +74,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getYear method, of class SprintEntry.
-
+     */
     @Test
     public void testGetYear() {
         System.out.println("getYear");
@@ -86,7 +86,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getHour method, of class SprintEntry.
-
+     */
     @Test
     public void testGetHour() {
         System.out.println("getHour");
@@ -98,7 +98,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getMin method, of class SprintEntry.
-
+     */
     @Test
     public void testGetMin() {
         System.out.println("getMin");
@@ -110,7 +110,7 @@ public class SprintEntryTest {
 
     /**
      * Test of getSec method, of class SprintEntry.
-
+     */
     @Test
     public void testGetSec() {
         System.out.println("getSec");
@@ -122,43 +122,55 @@ public class SprintEntryTest {
 
     /**
      * Test of getDistance method, of class SprintEntry.
-
+     */
     @Test
     public void testGetDistance() {
         System.out.println("getDistance");
         Entry instance = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 300, 4, 2);
-        float expResult = 3.0F;
+        float expResult = 300.0F;
         float result = instance.getDistance();
         assertEquals(expResult, result, 0.0);
     }
     
     /**
      * Test of getRepetitions method of class SprintEntry
-
+     */
     @Test
     public void testGetRepetitions() {
         System.out.println("getRepetitions");
-        Entry instance = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 300, 4, 2);
+        SprintEntry instance = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 300, 4, 2);
         int expResults = 4;
-        int result = instance.getRepetitions();
-        assertEquals(expResult, result);
+        int result = (instance).getRepetitions();
+        assertEquals(expResults, result);
+
+        //2nd test
+        SprintEntry instance2 = new SprintEntry("Daniel", 8, 1, 2000, 1, 4, 2, 200, 3, 1);
+        int expResults2 = 3;
+        int result2 = (instance2).getRepetitions();
+        assertEquals(expResults2, result2);
     }
     
     /**
      * Test of getRecovery method of class SprintEntry
-
+     */
     @Test
     public void testGetRecovery() {
         System.out.println("getRepetitions");
-        Entry instance = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 300, 4, 2);
+        SprintEntry instance = new SprintEntry("Alice", 1, 2, 2003, 0, 16, 7, 300, 4, 2);
         int expResults = 2;
-        int result = instance.getRecovery();
-        assertEquals(expResult, result);
+        int result = (instance).getRecovery();
+        assertEquals(expResults, result);
+
+        //2nd test
+        SprintEntry instance2 = new SprintEntry("Emmy", 4, 3, 2004, 0, 4, 2, 100, 3, 6);
+        int expResults2 = 6;
+        int result2 = (instance2).getRecovery();
+        assertEquals(expResults2, result2);
     }
 
     /**
      * Test of getEntry method, of class SprintEntry.
-
+     */
     @Test
     public void testGetEntry() {
         System.out.println("getEntry");
@@ -166,6 +178,6 @@ public class SprintEntryTest {
         String expResult = "Alice sprinted 4x300m in 0:16:7 with 2 minutes recovery on 1/2/2003\n";
         String result = instance.getEntry();
         assertEquals(expResult, result);
-    }*/
+    }
     
 }

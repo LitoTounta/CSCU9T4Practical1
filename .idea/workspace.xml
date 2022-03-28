@@ -5,30 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="434f57c1-60e5-4c62-a6df-0d07086f2a45" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CSCU9T4Practical1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/CycleEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SprintEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/SwimEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/Entry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stir/cscu9t4practical1/TrainingRecordGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/CycleEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/CycleEntryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SprintEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SprintEntryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SwimEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stir/cscu9t4practical1/SwimEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/stir/cscu9t4practical1/TrainingRecordGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/CycleEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/CycleEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SprintEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SprintEntryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SwimEntryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/stir/cscu9t4practical1/SwimEntryTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -68,7 +70,12 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.15632184" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.stir.cscu9t4practical1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.TrainingRecordGUI">
     <configuration name="TrainingRecordGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.TrainingRecordGUI" />
       <module name="CSCU9T4Practical1" />
@@ -82,9 +89,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CycleEntryTest.testGetTerrain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.CycleEntryTest" />
+      <option name="METHOD_NAME" value="testGetTerrain" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SprintEntryTest.testGetRecovery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.SprintEntryTest" />
+      <option name="METHOD_NAME" value="testGetRecovery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SprintEntryTest.testGetRepetitions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.SprintEntryTest" />
+      <option name="METHOD_NAME" value="testGetRepetitions" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SwimEntryTest.testGetWhere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CSCU9T4Practical1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stir.cscu9t4practical1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stir.cscu9t4practical1" />
+      <option name="MAIN_CLASS_NAME" value="com.stir.cscu9t4practical1.SwimEntryTest" />
+      <option name="METHOD_NAME" value="testGetWhere" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TrainingRecordGUI" />
+        <item itemvalue="JUnit.SprintEntryTest.testGetRecovery" />
+        <item itemvalue="JUnit.SprintEntryTest.testGetRepetitions" />
+        <item itemvalue="JUnit.SwimEntryTest.testGetWhere" />
+        <item itemvalue="JUnit.CycleEntryTest.testGetTerrain" />
       </list>
     </recent_temporary>
   </component>
@@ -97,6 +172,14 @@
       <option name="presentableId" value="Default" />
       <updated>1648463696621</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit.">
+      <created>1648479912499</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648479912499</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +206,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="First commit." />
     <option name="LAST_COMMIT_MESSAGE" value="First commit." />
   </component>
